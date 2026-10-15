@@ -1,22 +1,29 @@
-let precio = Number(prompt("Por favor ingrese el valor unitario del producto: "))
-let cantidad = Number(prompt("Por favor ingrese cuantos productos compró: "))
-let descuento = Number(prompt("Por favor ingrese el valor del descuento del producto"))
-const Subtotal=precio*cantidad// El valor del precio multiplicado por la cantidad
-let descu=(Subtotal*descuento)/100 
+let nombre = prompt("Por favor ingrese su nombre: ")
 
-//Este if hace referencia a que si el valor de las entradas no es un numero es decir Nan que saque una alerta, de lo contrario muestre los calculos
-if (Number.isNaN(precio) || Number.isNaN(cantidad) || Number.isNaN(descuento)) {
-  alert("Revisa los datos");
-} else {
+let nota = Number(prompt("Por favor ingrese su nota: "))
 
-let valor1=Subtotal-descu
-let valor2=valor1*0.19;
-let valor3=valor1+valor2
-let Total=valor3
-
-console.log(`Subtotal: ${Subtotal.toLocaleString("es-CO", { style: "currency", currency: "COP" })}`);
-console.log(`Descuento: ${descuento.toLocaleString("es-CO", { style: "currency", currency: "COP" })}`);
-console.log(`IVA (19%): ${valor2.toLocaleString("es-CO", { style: "currency", currency: "COP" })}`);
-console.log(`Total: ${Total.toLocaleString("es-CO", { style: "currency", currency: "COP" })}`);
-
+if (Number.isNaN(nota)) {
+    alert("La nota debe ser un número");
 } ;
+if (nota <= 0 && nota >= 5) { 
+    alert("La nota debe estar dentro del rango") 
+} else if (nota >=  4.6) {
+    console.log(`El nombre del aprendiz es ${nombre} y la nota es ${nota.toFixed(1)}`)
+    console.log("🏆 Excelente")
+    alert("🏆 Excelente") 
+}  
+else if (nota <= 4.5 && nota >= 4) {
+    console.log(`El nombre del aprendiz es ${nombre} y la nota es ${nota.toFixed(1)}`)
+    console.log("⭐ Sobresaliente")
+    alert("⭐ Sobresaliente")
+} 
+else if (nota <= 3.9 && nota >= 3) {
+    console.log(`El nombre del aprendiz es ${nombre} y la nota es ${nota.toFixed(1)}`)
+    console.log("✅ Aprobado")
+    alert("✅ Aprobado") 
+} 
+else if (nota <=  2.9) {
+    console.log(`El nombre del aprendiz es ${nombre} y la nota es ${nota.toFixed(1)}`)
+    console.log("❌ No aprobado")
+    alert("❌ No aprobado") 
+}  ;
